@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CheckIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duck" translatesAutoresizingMaskIntoConstraints="NO" id="Ojp-wa-90t">
+                                <rect key="frame" x="177.5" y="162" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="C5C-IT-Vcf"/>
+                                    <constraint firstAttribute="height" constant="20" id="DZQ-gq-0Ug"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yvc-0j-GdI">
+                                <rect key="frame" x="18" y="282" width="339" height="31"/>
+                                <connections>
+                                    <action selector="quack:" destination="BYZ-38-t0r" eventType="valueChanged" id="Dfq-6f-tYY"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-ms-mSV">
+                                <rect key="frame" x="50" y="551" width="275" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzh-68-Yfp">
+                                <rect key="frame" x="137.5" y="431" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EJa-Px-kuO"/>
+                                    <constraint firstAttribute="height" constant="100" id="VBV-O3-V2n"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="cat"/>
+                                <connections>
+                                    <action selector="switchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8S-iO-zbD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.48091435432434082" green="0.79409182071685791" blue="0.91527360677719116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xH5-ms-mSV" secondAttribute="trailing" constant="50" id="PKs-kg-TZP"/>
+                            <constraint firstItem="yvc-0j-GdI" firstAttribute="top" secondItem="Ojp-wa-90t" secondAttribute="bottom" constant="100" id="ROU-dz-QjJ"/>
+                            <constraint firstItem="xH5-ms-mSV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Ves-74-zkK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yvc-0j-GdI" secondAttribute="trailing" constant="20" id="Vzs-BM-nuv"/>
+                            <constraint firstItem="yvc-0j-GdI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XgF-Cg-UVw"/>
+                            <constraint firstItem="xH5-ms-mSV" firstAttribute="top" secondItem="gzh-68-Yfp" secondAttribute="bottom" constant="20" id="dTs-D3-vfC"/>
+                            <constraint firstItem="Ojp-wa-90t" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fbZ-PY-IEJ"/>
+                            <constraint firstItem="gzh-68-Yfp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gJf-Ya-nyv"/>
+                            <constraint firstItem="gzh-68-Yfp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.4" id="kOP-ZS-qCW"/>
+                            <constraint firstItem="Ojp-wa-90t" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.5" id="rgV-Kd-qME"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="animal" destination="xH5-ms-mSV" id="6TA-pG-94B"/>
+                        <outlet property="cat" destination="gzh-68-Yfp" id="4az-Kb-x9p"/>
+                        <outlet property="duck" destination="Ojp-wa-90t" id="mzr-VU-EPF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cat" width="369" height="269"/>
+        <image name="duck" width="512" height="512"/>
+    </resources>
+</document>
